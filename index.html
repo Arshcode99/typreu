@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="blueviolet" />
+    <title>Typcoreu - Check & Enhance Your Typing Skills For Free.</title>
+    <link rel="shortcut icon" href="./logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo" title="Typcoreu"></div>
+      <div class="links" id="menubox">
+        <span>Typcoreu - Check & Enhance Your Typing Skills For Free. </span>
+      </div>
+      <div class="acc">
+        <span class="active" id="timestamps">20:36 PM</span>
+      </div>
+    </header>
+    <section class="home">
+      <div class="three-col">
+        <div class="sponsors">
+          <h1 class="h1">Sponsors</h1>
+          <div class="info-box">
+            <img src="./Arshcode.png" alt="Sponsors Logo" />
+            <h1 class="sponsor-name">Arshcode</h1>
+            <hr />
+            <p class="large-ext">
+              Arshcode is a cutting-edge website development agency that was
+              founded in 2023. We specialize in creating visually stunning and
+              highly functional websites that are tailored to meet the specific
+              needs of our clients. Our team of experienced developers and
+              designers are committed to staying on top of the latest
+              technologies and trends in the industry to ensure that our clients
+              are always at the forefront of the digital landscape. Our services
+              include everything from website design and development, to search
+              engine optimization and digital marketing. We work closely with
+              our clients to understand their unique goals and objectives, and
+              to create a website that is not only visually appealing, but also
+              drives results, at Arshcode, we believe that a great website is
+              more than just a collection of pages and images. It's a powerful
+              tool for connecting with your audience, growing your business and
+              achieving your goals. That's why we take the time to understand
+              your business, your target market and your competitors, so that we
+              can create a website that is tailored to your specific needs. So
+              if you're looking for a website development agency that combines
+              creativity, expertise and results-driven strategies, look no
+              further than Arshcode. Contact us today to learn more about how we
+              can help take your business to the next level. At Arshcode, we
+              understand that every business is unique, and that's why we offer
+              a wide range of services to help our clients achieve their
+              specific goals.
+            </p>
+            <br />
+            <a href="https://arshcode.vercel.app">
+              <button>Know More</button></a
+            >
+          </div>
+        </div>
+        <div class="main-section">
+          <img src="./logo.png" alt="Slow Internet" id="logo" />
+          <div class="info-box">
+            <span id="YouSaid">Speed: <span id="timmer"> 0 </span>WPM</span>
+          </div>
+          <div class="info-box">
+            <span id="luinor-saysthis"
+              >Your Text:
+              <span id="randomtext"
+                ></span
+              ></span
+            >
+          </div>
+          <div class="info-box">
+            <label for="Type">Type The Random Text Shown On Your Screen*</label>
+            <br />
+            <textarea name="Type" id="Type" cols="30" rows="10"></textarea>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+            "
+          >
+            <button onclick="ShowDonate()">Donate</button><button onclick="ShareWebpage()">Share</button><button onclick="Next()">Next</button>
+          </div>
+          <div class="info-box">
+            <div class="you">
+              <span id="YouSaid">Summary For Your Typing Analatics:</span>
+              <p>Accuracy: <span id="accuracy">0</span>%</p>
+              <p>Suggestions: <span id="suggestions">None</span></p>
+            </div>
+          </div>
+          <p id="Success" className="success"></p>
+          <p id="failure" className="failure"></p>
+        </div>
+        <div class="ads">
+          <h1 class="h1">Ads</h1>
+          <div class="info-box">NO ADS... :)</div>
+        </div>
+      </div>
+      <div class="donate-box" id="closeBTN" onclick="CloseDonate()" title="click anywhere to close this!">
+        <div class="donate">
+          <h1 class="h1Next">SCAN & DONATE WITH PHONEPE SECURE TRANSACTIONS</h1>
+          <div class="qrcode">
+            <img src="./donate.png" alt="DONATE US">
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>
+        Copyright © <span id="year"></span>
+        <a href="https://arshcode.vercel.app">Arshcode |</a> All Rights Reserved
+        Typcoreu™
+      </p>
+    </footer>
+    <script>
+      //Time:
+      function SetTime() {
+        const CurrentTime = new Date();
+        document.getElementById("timestamps").innerHTML =
+          CurrentTime.toLocaleTimeString();
+      }
+      setInterval(SetTime, 1000);
+      //Get Current Year For Footer:
+      const CurrentYear = new Date().getFullYear();
+      document.getElementById("year").innerHTML = CurrentYear;
+      //Donate:
+      const closeBTN = document.getElementById('closeBTN');
+      function ShowDonate(){
+        closeBTN.style.display = 'flex';
+      }
+      function CloseDonate(){
+        closeBTN.style.display = 'none';
+      }
+      //Share
+      function ShareWebpage(){
+        navigator.share({
+          title: 'Typcoreu - Check & Enhance Your Typing Skills For Free.',
+          text: 'check out this amazing tool to enhance your typing skill!',
+          url: 'https://arshcode99.github.io/typcoreu',
+        });
+      }
+      //Next:
+      function Next(){
+        window.location.reload();
+      }
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>
